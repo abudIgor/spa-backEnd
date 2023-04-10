@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+import cors from 'cors';
 
 app.use(express.json());
 app.use(
@@ -7,6 +8,7 @@ app.use(
         extended : true,
     })
 );
+app.use(cors);
 
 const indexRouter = require("./routers/index");
 const leadRouter = require("./routers/lead");
