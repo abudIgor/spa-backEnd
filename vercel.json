@@ -6,17 +6,21 @@
             "use": "@vercel/node"
         }
     ],
-    "routes": [
+    // "routes": [
+    //     {
+    //         "src": "(.*)",
+    //         "dest":"src/index.js"
+    //     }
+    // ]
+    "rewrites": [
+        { "source": "/(.*)", "destination": "src/app.js" }
+    ],
+    "headers": [
         {
-            "src": "(.*)",
-            "dest":"src/index.js",
-            "headers": {
-                "Access-Control-Allow-Origin": "*",
-                "Content-Type": "application/json",
-                "Access-Control-Allow-Methods": "POST, OPTIONS, HEAD",
-                "Access-Control-Allow-Headers": "Access-Control-Allow-Methods, Access-Control-Allow-Headers, Access-Control-Allow-Credentials, Access-Control-Allow-Origin, Content-Type",
-                "Access-Control-Allow-Credentials": "true"
-            }
+          "source": "/(.*)",
+          "headers": [
+            { "key": "Access-Control-Allow-Origin", "value": "*" }
+          ]
         }
     ]
 }
