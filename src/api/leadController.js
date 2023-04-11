@@ -6,7 +6,7 @@ exports.add = async (req,res) => {
       req.header("Access-Control-Allow-Origin", "*")
       req.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
       const createLead = await LeadService.addLead(req.body);
-      res.status(201).json(createLead);
+      res.status(200).json(createLead);
    } catch(error) {
         return res.status(500).json({error:error});
    }
