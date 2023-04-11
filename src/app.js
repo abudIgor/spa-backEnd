@@ -8,8 +8,8 @@ app.use(
     })
 );
 
-const indexRouter = require("./routers/index");
-const leadRouter = require("./routers/lead");
+const indexRouter = require("./router/index");
+const leadRouter = require("./router/lead");
 
 app.use("/",indexRouter);
 app.use("/lead",leadRouter);
