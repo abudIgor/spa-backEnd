@@ -9,14 +9,18 @@
     "routes": [
         {
             "src": "(.*)",
-            "dest":"src/index.js",
-            "headers": {
-                "Access-Control-Allow-Origin": "*",
-                "Content-Type": "application/json",
-                "Access-Control-Allow-Methods": "POST, OPTIONS, HEAD",
-                "Access-Control-Allow-Headers": "Access-Control-Allow-Methods, Access-Control-Allow-Headers, Access-Control-Allow-Credentials, Access-Control-Allow-Origin, Content-Type",
-                "Access-Control-Allow-Credentials": "true"
-            }
+            "dest":"src/index.js"
+        }
+    ],
+    "headers": [
+        {
+          "source": "/app/(.*)",
+          "headers": [
+            { "key": "Access-Control-Allow-Credentials", "value": "true" },
+            { "key": "Access-Control-Allow-Origin", "value": "*" },
+            { "key": "Access-Control-Allow-Methods", "value": "GET,OPTIONS,PATCH,DELETE,POST,PUT" },
+            { "key": "Access-Control-Allow-Headers", "value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version" }
+          ]
         }
     ]
 }
