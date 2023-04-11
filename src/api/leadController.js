@@ -2,7 +2,7 @@ const LeadService = require("../services/LeadService");
 
 exports.add = async (req,res) => {
    try {
-      res.setHeader('content-type','text/plain');
+      res.setHeader("Access-Control-Allow-Origin", "*");
       const createLead = await LeadService.addLead(req.body);
       res.status(200).json(createLead);
    } catch(error) {
