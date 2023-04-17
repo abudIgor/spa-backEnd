@@ -3,7 +3,7 @@ const router = express.Router();
 const controller = require("../controller/leadController");
 
 /*Post*/
-router.post("/",controller.add);
+router.post("/",controller);
 
 
 module.exports = router;
