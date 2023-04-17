@@ -23,6 +23,11 @@
             "value": "true"
           }
         ]
+      },
+      {
+        "src": "/api/(.*)",
+        "methods": ["OPTIONS"],
+        "dest": "/api/cors"
       }
     ]
 }
