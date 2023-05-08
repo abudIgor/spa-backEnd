@@ -1,6 +1,15 @@
 const Lead = require("../models/Lead");
 
 module.exports = class LeadService {
+
+    static async getAllLeads() {
+        try {
+            const allLeads = await Lead.find();
+            return allLeads;
+        } catch (error) {
+            console.log(`Could not fetch Leads ${error}`);
+        }
+    }
   
     static async addLead(data) {
         try {
@@ -12,7 +21,7 @@ module.exports = class LeadService {
             const response = await new Lead(newLead).save();
             return response;
         } catch (error) {
-            console.log(`Could note add todo ${error}`);
+            console.log(`Could note add Lead ${error}`);
         }
     }
 

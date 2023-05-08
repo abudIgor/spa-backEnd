@@ -5,5 +5,8 @@ const controller = require("../controller/leadController");
 /*Post*/
 router.post("/",controller.add);
 
+/*Get All*/
+router.get("/", controller.getAll);
+
 
 module.exports = router;
