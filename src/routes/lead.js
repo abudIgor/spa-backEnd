@@ -8,5 +8,8 @@ router.post("/",controller.add);
 /*Get All*/
 router.get("/", controller.getAll);
 
+/*Get*/
+router.get("/:phone", controller.get);
+
 
 module.exports = router;
