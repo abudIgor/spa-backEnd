@@ -15,7 +15,7 @@ exports.getAll = async (req,res) => {
        if(!leads) {
            return res.status(404).json("There are no Leads published yet!");
        }
-       res.status(201).json(todos);
+       res.status(201).json(leads);
    } catch (error) {
        return res.status(500).json({ error: error});
    }
