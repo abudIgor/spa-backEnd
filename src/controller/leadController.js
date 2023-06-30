@@ -22,10 +22,10 @@ exports.getAll = async (req,res) => {
 }
 
 exports.get = async (req, res) => {
-   let id = req.params.phone;
+   let phone = req.params.phone;
    try {
-       const todo = await LeadService.getLeadByPhone(id);
-       res.json(todo);
+       const lead = await LeadService.getLeadByPhone(phone);
+       res.json(lead);
    } catch (error) {
        res.status(500).json({error: error});
    }
