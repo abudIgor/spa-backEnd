@@ -21,7 +21,7 @@ exports.getAll = async (req,res) => {
    }
 }
 
-exports.get = async (req, res) => {
+exports.getByPhone = async (req, res) => {
    let phone = req.params.phone;
    try {
        const lead = await LeadService.getLeadByPhone(phone);
