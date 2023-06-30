@@ -26,8 +26,9 @@ module.exports = class LeadService {
     }
 
     static async getLeadByPhone(phoneLead) {
+        console.log('phoneLead')
         try {
-            const lead = await Lead.find({phone:phoneLead});
+            const lead = await Lead.find({ phone : phoneLead});
             return lead;
         } catch (error) {
             console.log(`Could not found. ${error}`);
