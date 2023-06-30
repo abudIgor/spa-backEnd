@@ -9,7 +9,7 @@ router.post("/",controller.add);
 router.get("/", controller.getAll);
 
 /*Get*/
-router.get("/:phone", controller.get);
+// router.get("/:phone", controller.get);
 
 
 module.exports = router;
