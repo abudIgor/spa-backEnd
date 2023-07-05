@@ -26,7 +26,6 @@ module.exports = class LeadService {
     }
 
     static async getLeadByPhone(phoneLead) {
-        console.log('phoneLead')
         try {
             const lead = await Lead.find({ phone : phoneLead});
             return lead;
@@ -35,12 +34,13 @@ module.exports = class LeadService {
         }
     }
 
-    static async updateLead(id, todo) {
+    static async updateLead(id, lead) {
         try {
-            const updateResponse = await Lead.updateOne(
+            const updatedLead = await Lead.updateOne(
                 {_id: id},
-                { ...Lead}
+                { ...lead}
             )
+            return updatedLead;
         } catch (error) {
             console.log(`Could note update Lead ${error}`);
         }
