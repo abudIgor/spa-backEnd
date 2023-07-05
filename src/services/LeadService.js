@@ -35,4 +35,15 @@ module.exports = class LeadService {
         }
     }
 
+    static async updateLead(id, todo) {
+        try {
+            const updateResponse = await Lead.updateOne(
+                {_id: id},
+                { ...Lead}
+            )
+        } catch (error) {
+            console.log(`Could note update Lead ${error}`);
+        }
+    }
+
 }

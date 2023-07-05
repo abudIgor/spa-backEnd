@@ -9,5 +9,8 @@ router.post("/",controller.add);
 router.get("/", controller.getAll);
 router.get('/users/:phone', controller.get);
 
+/*Put*/
+router.put("/:id", controller.update);
+
 
 module.exports = router;

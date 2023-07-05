@@ -30,3 +30,24 @@ exports.get = async (req, res) => {
        res.status(500).json({error: error});
    }
 }
+
+exports.update = async (req, res) => {
+    let id = req.params.id;
+  
+    try {
+      const lead = {};
+      lead.name = req.body.name;
+      lead.email = req.body.email;
+      lead.phone = req.body.phone;
+  
+      const updatedLead = await LeadService.updateLead(id, lead);
+  
+      if (updatedLead.nModified === 0) {
+        return res.status(404).json({});
+      }
+  
+      res.json(updatedLead);
+    } catch (error) {
+      res.status(500).json({ error: error });
+    }
+  };
