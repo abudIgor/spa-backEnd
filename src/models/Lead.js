@@ -13,6 +13,10 @@ const leadSchema =  new Schema({
     email: {
         type: String,
         required: true,
+    },
+    isConverted: {
+        type: Boolean,
+        require: true,
     }
 });
 
