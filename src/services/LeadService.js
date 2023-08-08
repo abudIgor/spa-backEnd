@@ -16,7 +16,8 @@ module.exports = class LeadService {
             const newLead = {
                 name        : data.name,
                 phone       : data.phone,
-                email       : data.email
+                email       : data.email,
+                isConverted : data.isConverted
             }
             const response = await new Lead(newLead).save();
             return response;

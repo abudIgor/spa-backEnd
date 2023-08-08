@@ -16,7 +16,7 @@ const leadSchema =  new Schema({
     },
     isConverted: {
         type: Boolean,
-        require: true,
+        require: false,
     }
 });
 
